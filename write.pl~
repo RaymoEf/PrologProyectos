@@ -1,0 +1,3 @@
+write(X).
+
+cls :- write('\e[2J').

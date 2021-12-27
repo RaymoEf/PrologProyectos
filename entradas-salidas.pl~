@@ -1,0 +1,36 @@
+%entradas y salidas desde la consola
+%
+saludo:- write('Ingresa tu nombre: '), read(Nombre),
+    write('Hola como estas? '),write(Nombre).
+
+
+%menu de operaciones
+%
+menu:- write('****\n Gestor de operaciones****\n'),
+    write('1 sumar'),nl,
+    write('2 restar'),nl,
+    write('3 multiplicar'),nl,
+    write('4 dividir'),nl,
+    write('Seleccionar una opción (0 para salir): '), read(Option), ejecutar(Option).
+
+ejecutar(Option):- Option==1,sumar,menu;
+                   Option==2,restar,menu;
+                   Option==3,multiplicar,menu;
+                   Option==4,dividir,menu;
+                   Option==0,true.
+
+sumar:-write('Introduce el primer valor: '), read(A),
+    write('Introduce el segundo valor: '), read(B),
+    write('La suma es: '), Sum is A+B, write(Sum).
+
+restar:-write('Introduce el primer valor: '), read(A),
+    write('Introduce el segundo valor: '), read(B),
+    write('La suma es: '), Sum is A-B, write(Sum).
+
+multiplicar:-write('Introduce el primer valor: '), read(A),
+    write('Introduce el segundo valor: '), read(B),
+    write('La suma es: '), Sum is A*B, write(Sum).
+
+dividir:-write('Introduce el primer valor: '), read(A),
+    write('Introduce el segundo valor: '), read(B),
+    write('La suma es: '), Sum is A/B, write(Sum).

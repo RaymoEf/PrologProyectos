@@ -1,0 +1,11 @@
+conexion(d,h,4).
+conexion(d,i,2).
+conexion(i,f,11).
+conexion(h,f,9).
+conexion(f,a,10).
+conexion(f,g,10).
+conexion(a,b,7).
+
+aristas(X) :- conexion(X,_,_).
+
+costo(Inicio, Destino, Intermedio, Costo) :- conexion(Inicio, Intermedio, C1) , conexion(Intermedio, Destino, C2),  Costo is C1+C2.
